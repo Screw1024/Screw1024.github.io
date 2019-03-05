@@ -3,12 +3,12 @@ var OriginTitile = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
-    document.title = ' 页面崩溃啦 ~ | 老王博客';
+    document.title = ' 亲爱的，您怎么走了~ ';
     clearTimeout(titleTime);
   }
   else {
     $('[rel="icon"]').attr('href', "/favicon.ico");
-    document.title = ' 噫又好了~ ' + OriginTitile;
+    document.title = ' 撒拉嘿呦~ ';
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
     }, 2000);

@@ -64,7 +64,7 @@
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="陈">陈</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
         <!-- custom single page of menus -->
         
         
@@ -132,25 +132,28 @@
 </div>
             <div class="page-title">
     <ul>
-        <li><a href="/">首页</a></li>
+        <li><a href="/">Home</a></li>
         <!-- custom single page of topMenus -->
         
         
         <li><a href="/pictures">图册</a></li>
         
+        
+        <li><a href="/thought">思考</a></li>
+        
 
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
-        <input class="search-field" type="text" name="s" placeholder="请输入关键字">
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <label for="s" class="sr-only">Search...</label>
+        <input class="search-field" type="text" name="s" placeholder="Search...">
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -162,11 +165,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -199,7 +202,7 @@
             <p class="box_c">
                 <span class="d_time">发布时间：2019-02-27</span>
                 <span>来源：<a href="http://yoursite.com">Screw1024</a></span>
-                <span>阅读（<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>）</span>
+                
             </p>
             
         </div>
@@ -216,9 +219,9 @@
             
 
             <div style="text-align:center; color:#ccc; font-size:14px; padding: 20px 0;">
-             ------本文结束
-             &nbsp;<i class="fa fa-paw"></i>&nbsp;
-             感谢阅读------
+             ----本文结束
+             <i class="fa fa-heart-o"></i>
+             感谢阅读----
             </div>
         
 
@@ -255,7 +258,7 @@
     <footer class="footer">
     <div class="footer-inner" style="text-align: center;">
         <!--<p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             &lt;!&ndash; 自定义链接 &ndash;&gt;
             <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
@@ -263,7 +266,7 @@
         </p>-->
         <p>
             本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<span id="siteBuildingTime"></span>天<br>
-            ©2017 <i class="fa fa-heart-o"></i> Mr Wang
+            ©2019 <i class="fa fa-heart-o"></i> Screw1024
         </p>
     </div>
 </footer>
@@ -311,5 +314,5 @@
         <script src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":-40,"vOffset":10},"mobile":{"show":false}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":10,"vOffset":-140},"mobile":{"show":false}});</script></body>
 </html>
