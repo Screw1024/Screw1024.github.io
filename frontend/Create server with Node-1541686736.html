@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://Screw1024.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://Screw1024.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://Screw1024.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="https://Screw1024.github.io">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://Screw1024.github.io">
+<meta name="author" content="陈永建">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+
+<title>node创建服务器 - Screw1204@blog</title>
+
+<meta name="keywords" content="Node，Screw1204，blog">
+
+<meta name="description " content="通过Node.js创建服务器">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="陈">陈</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/about" title="关于">
+            <i class="fa fa-question-circle"></i>
+            <span>关于</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <img class="avatar" width="72" src="/images/avatar.jpg" alt="avatar">
+        
+        <h1 class="cover-siteName"></h1>
+        <h3 class="cover-siteTitle">永远的“白带”选手——陈永建</h3>
+        <p class="cover-siteDesc">念念不忘，必有回响！</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/Screw1024" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最近</a></li>
+        
+            
+                <li class="active">
+                    <a href="/categories/frontend" data-name="前端">前端</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/backend" data-name="后端">后端</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/GIS" data-name="GIS">GIS</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/thought" data-name="思考">思考</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/reading" data-name="读书">读书</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="读物检索~">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://github.com/Screw1024" target="_blank">
+                    <img width="48" src="/images/avatar.jpg" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href target="_blank">Screw1204</a>
+                    <span title="最后编辑于&nbsp;2018-11-08">2018-11-08</span>
+                </p>
+                <p>永远的“白带”选手</p>
+            </div>
+            <h2 class="post-title">Node创建服务器</h2>
+            <div class="post-meta">
+                本文共计1599个字 |
+                您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h5 id="要点"><a href="#要点" class="headerlink" title="要点:"></a>要点:</h5><p>​    1.通过引入核心模块，来进行文件的读取和服务器的创建，并调用相应模块的API，进行想要的操作。</p>
+<p>​    2.不同的文件类型进行不同的解析，主要通过Content-Type（多用途互联网邮件拓展）进行不同的定义，如html对应text/html，注意编码方式的声明，服务器默认是utf-8，但是浏览器编码方式是跟当前操作系统是一致的，win10中文操作系统是gbk编码方式，所以会造成乱码。</p>
+<p>​    3.通过node启动服务器后，修改了被读取的文件，不需要重启服务器，因为他是动态读取文件的，通过之前建立的联系。</p>
+<p>相关代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">// 引入两个核心库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = http.createServer();</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> url = req.url;</span><br><span class="line">    <span class="comment">// 获取输入的请求字符串url</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(url === <span class="string">'/'</span>)&#123;</span><br><span class="line">    	<span class="comment">//‘/’后是请求的路径</span></span><br><span class="line"></span><br><span class="line">    	fs.readFile(<span class="string">'./reource/halloword.html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">    		<span class="keyword">if</span>(err)&#123;</span><br><span class="line">    			res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">    			res.end(<span class="string">'老哥，没读出来，是不是路径或者文件名写错了啊'</span>);</span><br><span class="line">    		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    			<span class="comment">//data存取的是读取到的内容，是二进制的数据，通过toString转为字符串</span></span><br><span class="line">    			<span class="comment">//res.end()支持两种格式，二进制格式和字符串类型</span></span><br><span class="line">    			res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html; charset=utf-8'</span>);</span><br><span class="line">    			<span class="comment">// 注意和上面个text/plain的区别，通过text/html声明html类型文件</span></span><br><span class="line">    			res.end(data);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(url === <span class="string">'/pushu'</span>)&#123;</span><br><span class="line">	    	fs.readFile(<span class="string">'./reource/pushu.jpeg'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">    		<span class="keyword">if</span>(err)&#123;</span><br><span class="line">    			res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain; charset=utf-8'</span>);</span><br><span class="line">    			res.end(<span class="string">'老哥，没读出来，是不是路径或者文件名写错了啊'</span>);</span><br><span class="line">    		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    			<span class="comment">//data存取的是读取到的内容，是二进制的数据，通过toString转为字符串</span></span><br><span class="line">    			<span class="comment">//res.end()支持两种格式，二进制格式和字符串类型</span></span><br><span class="line">    			res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'image/jpeg'</span>);</span><br><span class="line">    			<span class="comment">// 图片反而不能声明utf-8编码格式他有特定的编码格式</span></span><br><span class="line">    			res.end(data);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;);</span><br><span class="line">	 &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'老哥，安排好了'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+<p>启动服务器：</p>
+<p><img src="/img/2019/nodeServer/1.png" alt></p>
+<p>效果：</p>
+<p><img src="/img/2019/nodeServer/2.gif" alt></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/Node/">Node</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<span id="siteBuildingTime"></span>天<br>
+            ©2019 <i class="fa fa-heart-o"></i> Screw1024
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="请输入查询关键词">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '03/4/2019',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+            jsi_config.localSearch = {
+                dbPath: '/search.xml',
+                trigger: 'auto',
+                topN: '1',
+                unescape: 'false'
+            }
+        
+        SimpleCore.init(jsi_config);
+        
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+        
+    });
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":10,"vOffset":-140},"mobile":{"show":false}});</script></body>
+</html>

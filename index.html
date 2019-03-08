@@ -2,48 +2,59 @@
 <html class="no-js" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
     <!--[if lte IE 9]>
-<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<meta http-equiv="refresh" content="0;url=https://Screw1024.github.io/warn.html">
 <![endif]-->
 <meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://Screw1024.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://Screw1024.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
 
+
+<link rel="prerender" href="https://Screw1024.github.io">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
-<meta name="author" content="Screw1024">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/SimpleStyle.css">
-<link rel="stylesheet" href="/css/custom.css">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://Screw1024.github.io">
+<meta name="author" content="陈永建">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.ico">
 
 
-<link rel="shortcut icon" href="/favicon.ico">
+<title>Screw1204@blog - </title>
 
-
-<title>陈永建的博客 - </title>
-
-<meta name="keywords" content="个人博客, 陈永建个人博客, 个人博客系统, 陈永建">
+<meta name="keywords" content="Screw1204，陈永建博客，原创IT博客">
 
 <meta name="description " content>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
 </head>
 <body>
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="陈">陈</a>
         <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
         <!-- custom single page of menus -->
-        
-        
-        <a href="/archives" title="归档">
-            <i class="fa fa-archives"></i>
-            <span>归档</span>
-        </a>
-        
-        
-        <a href="/tags" title="标签">
-            <i class="fa fa-tags"></i>
-            <span>标签</span>
-        </a>
         
         
         <a href="/about" title="关于">
@@ -57,10 +68,9 @@
 <div class="nav-user">
     <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
     <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
-    
-    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
-    
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
 </div>
+
 <div id="wrapper" class="clearfix">
     <div id="body">
         <div class="main" id="main">
@@ -68,184 +78,306 @@
     <div class="cover-img"></div>
     <div class="cover-info">
         
-        <img class="avatar site-author-image" width="72" src="/images/avatar.jpg" alt="avatar">
+        <img class="avatar" width="72" src="/images/avatar.jpg" alt="avatar">
         
         <h1 class="cover-siteName"></h1>
         <h3 class="cover-siteTitle">永远的“白带”选手——陈永建</h3>
         <p class="cover-siteDesc">念念不忘，必有回响！</p>
         <div class="cover-sns">
             
-            <div class="btn btn-github">
-                <a href="https://github.com/Screw1024" target="_blank" title="github" ref="friend">
-                    <i class="fa fa-github"></i>
-                </a>
-            </div>
-            
-            <div class="btn btn-send-o">
-                <a href="https://t.me/screw1024" target="_blank" title="send-o" ref="friend">
-                    <i class="fa fa-send-o"></i>
-                </a>
-            </div>
-            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/Screw1024" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
         </div>
     </div>
 </div>
+
             <div class="page-title">
     <ul>
-        <li><a href="/">首页</a></li>
-        <!-- custom single page of topMenus -->
+        <li class="active">
+            <a href="/" data-name="最近">最近</a>
+        </li>
         
+        <li class>
+            <a href="/categories/frontend" data-name="前端">前端</a>
+        </li>
         
-        <li><a href="/hobby">爱好</a></li>
+        <li class>
+            <a href="/categories/backend" data-name="后端">后端</a>
+        </li>
         
+        <li class>
+            <a href="/categories/GIS" data-name="GIS">GIS</a>
+        </li>
         
-        <li><a href="/thought">思考</a></li>
+        <li class>
+            <a href="/categories/thought" data-name="思考">思考</a>
+        </li>
         
-
+        <li class>
+            <a href="/categories/reading" data-name="读书">读书</a>
+        </li>
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
-        <input class="search-field" type="text" name="s" placeholder="请输入关键字">
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="读物检索~">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
     </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="搜索">
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
 </li>
 
     </ul>
 </div>
-            <div class="main-inner">
+<div class="main-inner">
     
-    <!-- 首页默认取最最新文章集 -->
-    
-    
-<article class="post">
-    <div>
         
-        <div class="post-header">
-            <a class="post-title" href="/2019/02/27/致池州学院24栋110的帅比们/" target="_blank" title="致池州学院24栋110的帅比们">致池州学院24栋110的帅比们</a>
+            
+<article class="post">
+    
+    <!-- render the first if pics exists. -->
+    <div class="post-cover">
+        <a href="/GIS/GIS development blog-1552012144.html" target="_blank" title="GIS开发博客" style="background-image:url(/img/2019/gisBlog/esri.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://github.com/Screw1024" target="_blank">
+                <strong>Screw1204</strong>
+            </a>
+            <em>·</em>2019-03-08
+            
         </div>
-        <div class="post-desc">
-            致池州学院24栋110的帅比们
+        <a class="post-title" href="/GIS/GIS development blog-1552012144.html" target="_blank" title="GIS开发博客">GIS开发博客</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/GIS/" target="_blank">GIS</a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/blog/" target="_blank">blog</a>
+            
         </div>
     </div>
-    <div class="post-meta">
-        <a href="http://yoursite.com" target="_blank">
-            <strong>Screw1024</strong>
-        </a>
-        <em>·</em>2019-02-27
-        <em>·</em>
-        <i class="fa fa-book"></i>
-        
+    <div class="post-desc">
+        GIS开发大牛的个人博客归纳资源
     </div>
 </article>
 
 
 
-    
-    
-<article class="post">
-    <div>
         
-        <div class="post-header">
-            <a class="post-title" href="/2019/02/27/hello-world/" target="_blank" title="Hello World">Hello World</a>
+            
+<article class="post">
+    
+    <!-- render the first if pics exists. -->
+    <div class="post-cover">
+        <a href="/thought/why this blog site-1551756187.html" target="_blank" title="为何建站" style="background-image:url(/img/2019/why/JSimple.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://github.com/Screw1024" target="_blank">
+                <strong>Screw1204</strong>
+            </a>
+            <em>·</em>2019-03-05
+            
         </div>
-        <div class="post-desc">
-            Hello World
+        <a class="post-title" href="/thought/why this blog site-1551756187.html" target="_blank" title="为何建站">为何建站</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/thought/" target="_blank">thought</a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/hexo/" target="_blank">hexo</a>
+            
         </div>
     </div>
-    <div class="post-meta">
-        <a href="http://yoursite.com" target="_blank">
-            <strong>Screw1024</strong>
-        </a>
-        <em>·</em>2019-02-27
-        <em>·</em>
-        <i class="fa fa-book"></i>
-        
+    <div class="post-desc">
+        这篇文章来谈谈关于建站、写作的话题。
     </div>
 </article>
 
 
 
+        
+            
+<article class="post">
     
+    <!-- render the first if pics exists. -->
+    <div class="post-cover">
+        <a href="/thought/about my hobby-1551756187.html" target="_blank" title="我的爱好" style="background-image:url(/img/2019/hobby/pushu.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://github.com/Screw1024" target="_blank">
+                <strong>Screw1204</strong>
+            </a>
+            <em>·</em>2019-03-05
+            
+        </div>
+        <a class="post-title" href="/thought/about my hobby-1551756187.html" target="_blank" title="我的爱好">我的爱好</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/thought/" target="_blank">thought</a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/hobby/" target="_blank">hobby</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        这篇文章来谈谈关于我的一点爱好。
+    </div>
+</article>
+
+
+
+        
+            
+<article class="post">
+    
+    <!-- render the first if pics exists. -->
+    <div class="post-cover">
+        <a href="/frontend/Create server with Node-1541686736.html" target="_blank" title="Node创建服务器" style="background-image:url(/img/2019/nodeServer/node.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://github.com/Screw1024" target="_blank">
+                <strong>Screw1204</strong>
+            </a>
+            <em>·</em>2018-11-08
+            
+        </div>
+        <a class="post-title" href="/frontend/Create server with Node-1541686736.html" target="_blank" title="Node创建服务器">Node创建服务器</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/Node/" target="_blank">Node</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        通过Node.js创建服务器
+    </div>
+</article>
+
+
+
+        
+            
+<article class="post">
+    
+    <!-- render the first if pics exists. -->
+    <div class="post-cover">
+        <a href="/backend/Student management system-1525442470.html" target="_blank" title="大二完成的学生管理系统" style="background-image:url(/img/2018/studentDB/1.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="https://github.com/Screw1024" target="_blank">
+                <strong>陈永建</strong>
+            </a>
+            <em>·</em>2018-05-04
+            
+        </div>
+        <a class="post-title" href="/backend/Student management system-1525442470.html" target="_blank" title="大二完成的学生管理系统">大二完成的学生管理系统</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/Database/" target="_blank">Database</a>
+            
+                <em>·</em>
+                <a href="https://Screw1024.github.io/tags/C/" target="_blank">C#</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        大二发表在CSDN上的博客：我发表的第一篇博客，也是在CSND上看的人最多的博客
+    </div>
+</article>
+
+
+
+        
     
 </div>
-<!-- 分页开始 -->
 
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: center;">
-        <!--<p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            &lt;!&ndash; 自定义链接 &ndash;&gt;
-            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/app" title="App下载">App下载</a>
-        </p>-->
+    <div class="footer-inner" style="text-align: left">
+        
         <p>
             本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<span id="siteBuildingTime"></span>天<br>
             ©2019 <i class="fa fa-heart-o"></i> Screw1024
         </p>
     </div>
 </footer>
+<script src="/js/SimpleCore.js"></script>
+
 </div>
-
-
-
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="请输入查询关键词">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
-
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script src="/js/InsightSearch.js"></script>
-<script src="/js/scrollspy.js"></script>
-<script src="/js/SimpleCore.js"></script>
-<script src="/js/dytitle.js"></script>
-
 <script>
     $(function () {
-        SimpleCore.init({
-            buildingTime: '03/04/2019',
+        var jsi_config = {
+            buildingTime: '03/4/2019',
             current: $('.post-tags').length > 0 ? 'post' : 'archive',
-            wxMpImg: '/images/qrcode.jpg',
-            donateImg: '/images/donate-qr.jpg',
-        });
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+            jsi_config.localSearch = {
+                dbPath: '/search.xml',
+                trigger: 'auto',
+                topN: '1',
+                unescape: 'false'
+            }
+        
+        SimpleCore.init(jsi_config);
+        
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+        
     });
 </script>
-
-
-
-
-
-
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":10,"vOffset":-140},"mobile":{"show":false}});</script></body>
 </html>

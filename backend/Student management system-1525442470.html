@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://Screw1024.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://Screw1024.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://Screw1024.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="https://Screw1024.github.io">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://Screw1024.github.io">
+<meta name="author" content="陈永建">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+
+<title>大二完成的学生管理系统 - Screw1204@blog</title>
+
+<meta name="keywords" content="学生管理系统, C#">
+
+<meta name="description " content="大二发表在CSDN上的博客：我发表的第一篇博客，也是在CSND上看的人最多的博客">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="陈">陈</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/about" title="关于">
+            <i class="fa fa-question-circle"></i>
+            <span>关于</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <img class="avatar" width="72" src="/images/avatar.jpg" alt="avatar">
+        
+        <h1 class="cover-siteName"></h1>
+        <h3 class="cover-siteTitle">永远的“白带”选手——陈永建</h3>
+        <p class="cover-siteDesc">念念不忘，必有回响！</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/Screw1024" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最近</a></li>
+        
+            
+                <li class>
+                    <a href="/categories/frontend" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/backend" data-name="后端">后端</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/GIS" data-name="GIS">GIS</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/thought" data-name="思考">思考</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/reading" data-name="读书">读书</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="读物检索~">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://github.com/Screw1024" target="_blank">
+                    <img width="48" src="/images/avatar.jpg" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href target="_blank">陈永建</a>
+                    <span title="最后编辑于&nbsp;2018-05-04">2018-05-04</span>
+                </p>
+                <p>永远的“白带”选手</p>
+            </div>
+            <h2 class="post-title">大二完成的学生管理系统</h2>
+            <div class="post-meta">
+                本文共计8887个字 |
+                您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h5 id="一、创建关系"><a href="#一、创建关系" class="headerlink" title="一、创建关系"></a>一、创建关系</h5><blockquote>
+<p>​    首先创建三个表student、teacherInfo、stndentInfo 分别用于存放学生基本信息、老师账户和密码、学生的学号和密码。</p>
+</blockquote>
+<p><img src="/img/2018/studentDB/2.png" alt></p>
+<h5 id="二、权限设置"><a href="#二、权限设置" class="headerlink" title="二、权限设置"></a>二、权限设置</h5><blockquote>
+<p>​    分别建立老师和学生的登陆入口，通过入口信息判断后查询不同的表（关系），从而完成不同的操作人员的数据库的权限要求，老师可以看到全部信息，每个学生只能看到自己的信息。</p>
+</blockquote>
+<p><img src="/img/2018/studentDB/3.png" alt></p>
+<p>​      为了区别不同的登陆人员，先定义两个RadioButton，由于学生人数比老师人数多的多，在学生的RadioButton的控件属性check中，选择为默认。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">private <span class="keyword">void</span> btnOk_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (rbtnStudent.Checked)</span><br><span class="line">           &#123;   </span><br><span class="line">               <span class="comment">//选择的是学生对象</span></span><br><span class="line">               using (SqlConnection conn = <span class="keyword">new</span> SqlConnection(<span class="string">"Data Source=DESKTOP-BEUJ3C4;Initial Catalog=School2;User ID=sa;Password =2323010676;"</span>))</span><br><span class="line">               &#123;</span><br><span class="line">                   conn.Open();</span><br><span class="line">                   <span class="comment">//打开数据库的连接</span></span><br><span class="line"></span><br><span class="line">                   <span class="built_in">String</span> sql = <span class="string">"select * from stndentInfo where sno = @sno and spw = @spw"</span>;</span><br><span class="line">                   <span class="comment">//创建数据库的操作字符串</span></span><br><span class="line"></span><br><span class="line">                   SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, conn); </span><br><span class="line">                   <span class="comment">//对指定的对象，操作字符串内容</span></span><br><span class="line"></span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@sno"</span>, txtNo.Text));</span><br><span class="line">                   <span class="comment">//用参数代替占位符，线性更安全</span></span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@spw"</span>, txtPw.Text));</span><br><span class="line"></span><br><span class="line">                   SqlDataReader reader = cmd.ExecuteReader();<span class="comment">//操作</span></span><br><span class="line"></span><br><span class="line">                   <span class="keyword">if</span> (reader.Read())</span><br><span class="line">                   &#123;</span><br><span class="line">                       <span class="comment">//如果查询到内容，跳转到Information界面，同时关闭当前界面</span></span><br><span class="line">                       Information info = <span class="keyword">new</span> Information(); </span><br><span class="line">                       info.Show();</span><br><span class="line">                       <span class="keyword">this</span>.Hide();</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">else</span></span><br><span class="line">                   &#123;</span><br><span class="line">                       MessageBox.Show(<span class="string">"请输入正确信息！"</span>);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">           &#123;</span><br><span class="line">               <span class="comment">//这里只有两个选项，就没写条件，其余同上，注意对应的数据关系，表是不同的</span></span><br><span class="line">               using (SqlConnection conn = <span class="keyword">new</span> SqlConnection(<span class="string">"Data Source=DESKTOP-BEUJ3C4;Initial Catalog=School2;User ID=sa;Password =2323010676;"</span>))</span><br><span class="line">               &#123;</span><br><span class="line">                   conn.Open();</span><br><span class="line"></span><br><span class="line">                   <span class="built_in">String</span> sql = <span class="string">"select * from teacherInfo where userT = @userT and pwT = @pwT"</span>;</span><br><span class="line"></span><br><span class="line">                   SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, conn);</span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@userT"</span>, txtNo.Text));</span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@pwT"</span>, txtPw.Text));</span><br><span class="line"></span><br><span class="line">                   SqlDataReader reader = cmd.ExecuteReader();</span><br><span class="line"></span><br><span class="line">                   <span class="keyword">if</span> (reader.Read())</span><br><span class="line">                   &#123;</span><br><span class="line">                       teacherUse teac = <span class="keyword">new</span> teacherUse();</span><br><span class="line">                       teac.Show();</span><br><span class="line">                       <span class="keyword">this</span>.Hide();</span><br><span class="line">                   &#125;</span><br><span class="line">                   <span class="keyword">else</span></span><br><span class="line">                   &#123;</span><br><span class="line">                       MessageBox.Show(<span class="string">"请输入正确信息！"</span>);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//如果取消操作，关闭程序</span></span><br><span class="line">       private <span class="keyword">void</span> btnCancel_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">this</span>.Close();</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="三、学生功能"><a href="#三、学生功能" class="headerlink" title="三、学生功能"></a>三、学生功能</h5><blockquote>
+<p>​    完成修改密码，添加新的学生信息（为了方便），这里需要引起重视的是，这里的date类型需要进行转换，注意和老师界面查询是的date类型做出区分。</p>
+</blockquote>
+<p><img src="/img/2018/studentDB/4.png" alt></p>
+<ul>
+<li><p>查询模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">private <span class="keyword">void</span> btnOk_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           using (SqlConnection conn = <span class="keyword">new</span> SqlConnection(<span class="string">"Data Source=DESKTOP-BEUJ3C4;Initial Catalog=School2;User ID=sa;Password =2323010676;"</span>))</span><br><span class="line">           &#123;</span><br><span class="line">               conn.Open();</span><br><span class="line"></span><br><span class="line">               </span><br><span class="line">               <span class="keyword">if</span> (txtNewpw.Text == txtCheckpw.Text)</span><br><span class="line">               &#123;</span><br><span class="line">                   string sql = <span class="built_in">String</span>.Format(<span class="string">"update stndentInfo set spw = @spw where sno = @sno"</span>);</span><br><span class="line"></span><br><span class="line">                   </span><br><span class="line">                   SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, conn);</span><br><span class="line"></span><br><span class="line">                  </span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@sno"</span>, txtUser.Text));</span><br><span class="line">                   <span class="comment">//这里注意也要写成txt.User.Text转换的是文本框里面的内容</span></span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@spw"</span>, txtCheckpw.Text));</span><br><span class="line"></span><br><span class="line">                   int rows = cmd.ExecuteNonQuery();</span><br><span class="line">                   <span class="comment">//这句话时执行的语句的必要的控制性的一句话</span></span><br><span class="line"></span><br><span class="line">                   MessageBox.Show(<span class="string">"新密码已经修改完成"</span>);</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   MessageBox.Show(<span class="string">"请输入两次相同的密码"</span>);</span><br><span class="line">               &#125;</span><br><span class="line">              </span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改密码模块</p>
+<p><img src="/img/2018/studentDB/5.png" alt></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">private <span class="keyword">void</span> btnOk_Click(object sender, EventArgs e)</span><br><span class="line">       &#123;</span><br><span class="line">           using (SqlConnection conn = <span class="keyword">new</span> SqlConnection(<span class="string">"Data Source=DESKTOP-BEUJ3C4;Initial Catalog=School2;User ID=sa;Password =2323010676;"</span>))</span><br><span class="line">           &#123;</span><br><span class="line">               conn.Open();</span><br><span class="line"></span><br><span class="line">               </span><br><span class="line">               <span class="keyword">if</span> (txtNewpw.Text == txtCheckpw.Text)</span><br><span class="line">               &#123;</span><br><span class="line">                   string sql = <span class="built_in">String</span>.Format(<span class="string">"update stndentInfo set spw = @spw where sno = @sno"</span>);</span><br><span class="line"></span><br><span class="line">                   </span><br><span class="line">                   SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, conn);</span><br><span class="line"></span><br><span class="line">                  </span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@sno"</span>, txtUser.Text));</span><br><span class="line">                   <span class="comment">//这里注意也要写成txt.User.Text转换的是文本框里面的内容</span></span><br><span class="line">                   cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@spw"</span>, txtCheckpw.Text));</span><br><span class="line"></span><br><span class="line">                   int rows = cmd.ExecuteNonQuery();</span><br><span class="line">                   <span class="comment">//这句话时执行的语句的必要的控制性的一句话</span></span><br><span class="line"></span><br><span class="line">                   MessageBox.Show(<span class="string">"新密码已经修改完成"</span>);</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   MessageBox.Show(<span class="string">"请输入两次相同的密码"</span>);</span><br><span class="line">               &#125;</span><br><span class="line">              </span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="四、老师功能"><a href="#四、老师功能" class="headerlink" title="四、老师功能"></a>四、老师功能</h5><blockquote>
+<p>​    查询学生的详细信息，注意date格式的转换，以及完成查询后的标签内容的转换。</p>
+</blockquote>
+<ul>
+<li><p>对学生单个查询</p>
+<p><img src="/img/2018/studentDB/6.png" alt></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">private <span class="keyword">void</span> btnOk_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(txtSno.Text == <span class="literal">null</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                MessageBox.Show(<span class="string">"请输入学号"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                using (SqlConnection conn = <span class="keyword">new</span> SqlConnection(<span class="string">"Data Source=DESKTOP-BEUJ3C4;Initial Catalog=School2;User ID=sa;Password =2323010676;"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    conn.Open();</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">                    <span class="built_in">String</span> sql = <span class="string">"select * from student where sno = @sno"</span>;</span><br><span class="line"> </span><br><span class="line">                    SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql,conn);</span><br><span class="line"> </span><br><span class="line">                    cmd.Parameters.Add(<span class="keyword">new</span> SqlParameter(<span class="string">"@sno"</span>, txtSno.Text));</span><br><span class="line"> </span><br><span class="line">                    SqlDataReader reader = cmd.ExecuteReader();</span><br><span class="line"> </span><br><span class="line">                    <span class="keyword">if</span> (reader.Read())</span><br><span class="line">                    &#123;</span><br><span class="line">                        txtMajor.Text = reader.GetString(reader.GetOrdinal(<span class="string">"smajor"</span>));</span><br><span class="line">                        txtSex.Text = reader.GetString(reader.GetOrdinal(<span class="string">"sSex"</span>));</span><br><span class="line">                        txtName.Text = reader.GetString(reader.GetOrdinal(<span class="string">"sname"</span>));</span><br><span class="line"> </span><br><span class="line">                        DateTime dt = reader.GetDateTime(reader.GetOrdinal(<span class="string">"sbirthday"</span>));</span><br><span class="line">                        <span class="comment">//用Datetime格式接收时间对象</span></span><br><span class="line">                        txtBirthday.Text = dt.ToShortDateString();</span><br><span class="line">                        <span class="comment">//将需要显示的内容转化成能在lable控件中显示的字符串                        </span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="comment">//清除上一次查询标签中的内容，不然下次查询不显示查询出来的内容</span></span><br><span class="line">                        txtSno.Text = <span class="literal">null</span>;</span><br><span class="line">                        txtSex.Text = <span class="literal">null</span>;</span><br><span class="line">                        txtName.Text = <span class="literal">null</span>;</span><br><span class="line">                        txtMajor.Text = <span class="literal">null</span>;</span><br><span class="line">                        txtBirthday.Text = <span class="literal">null</span>;</span><br><span class="line">                        MessageBox.Show(<span class="string">"抱歉，没有查到对应学号的学生信息"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line"> </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对学生进行分组查询</p>
+<blockquote>
+<p>​    分组对学生进行查询，将结果添加进DataGirdView控件中，注意前面也提到了Anchor控制位置。</p>
+</blockquote>
+<p><img src="/img/2018/studentDB/7.png" alt></p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public partial class 学生信息查询 : Form</span><br><span class="line">    &#123;</span><br><span class="line">        public 学生信息查询()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        private <span class="keyword">void</span> 学生信息查询_Load(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//加载界面时，即添加下拉框里面的内容</span></span><br><span class="line">            cbxinfo.Items.Add(<span class="string">"地信专业"</span>);</span><br><span class="line">            cbxinfo.Items.Add(<span class="string">"测绘专业"</span>);</span><br><span class="line">            cbxinfo.Items.Add(<span class="string">"物理专业"</span>);</span><br><span class="line">            cbxinfo.Items.Add(<span class="string">"外语专业"</span>);</span><br><span class="line">            cbxinfo.Items.Add(<span class="string">"中文专业"</span>);</span><br><span class="line">            cbxinfo.Items.Add(<span class="string">"计算机专业"</span>);</span><br><span class="line"> </span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        private <span class="keyword">void</span> btnOk_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            using (SqlConnection conn = <span class="keyword">new</span> SqlConnection(<span class="string">"Data Source=DESKTOP-BEUJ3C4;Initial Catalog=School;User ID=sa;Password =2323010676;"</span>))</span><br><span class="line">                <span class="comment">//这里使用的数据库是，前面查询信息作业添加的school数据库，用于存放学生的基本信息，及考试信息</span></span><br><span class="line">            &#123;</span><br><span class="line">                conn.Open();</span><br><span class="line"> </span><br><span class="line">                <span class="comment">//String sql = "select * from student where 所属专业 =@所属专业";</span></span><br><span class="line"> </span><br><span class="line">                <span class="built_in">String</span> sql = <span class="built_in">String</span>.Format( <span class="string">"select * from student where 所属专业 ='&#123;0&#125;'"</span>,cbxinfo.Text);</span><br><span class="line"> </span><br><span class="line">                SqlCommand cmd = <span class="keyword">new</span> SqlCommand();</span><br><span class="line">                <span class="comment">//创建数据库命令对象</span></span><br><span class="line">                <span class="comment">// cmd.Parameters.Add(new SqlParameter("@所属专业",cbxinfo.Text));</span></span><br><span class="line">                <span class="comment">//将下拉框里面的文本代替参数信息  用参数不行，不知为什么，改用占位符</span></span><br><span class="line"> </span><br><span class="line">                SqlDataAdapter sda = <span class="keyword">new</span> SqlDataAdapter(sql, conn);</span><br><span class="line">                <span class="comment">//逐行查询，区别于SqlDataReader聚合查询</span></span><br><span class="line">                DataSet ds = <span class="keyword">new</span> DataSet(); </span><br><span class="line">                <span class="comment">//创建容器，存放查询出来的对象</span></span><br><span class="line">                sda.Fill(ds);<span class="comment">//将对象填充容器</span></span><br><span class="line"> </span><br><span class="line">                dgvShow.DataSource = ds.Tables[<span class="number">0</span>];</span><br><span class="line">                <span class="comment">//绑定数据，将查询出来的第一个表数据显示在dgvShow中</span></span><br><span class="line"> </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>结果：</li>
+</ul>
+<p><img src="/img/2018/studentDB/8.png" alt></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/Database/">Database</a>
+            
+            <a href="/tags/C/">C#</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<span id="siteBuildingTime"></span>天<br>
+            ©2019 <i class="fa fa-heart-o"></i> Screw1024
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="请输入查询关键词">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '03/4/2019',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+            jsi_config.localSearch = {
+                dbPath: '/search.xml',
+                trigger: 'auto',
+                topN: '1',
+                unescape: 'false'
+            }
+        
+        SimpleCore.init(jsi_config);
+        
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+        
+    });
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":10,"vOffset":-140},"mobile":{"show":false}});</script></body>
+</html>
