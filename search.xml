@@ -106,33 +106,6 @@
     
     
     <entry>
-      <title>为何建站</title>
-      <link href="/thought/why%20this%20blog%20site-1551756187.html"/>
-      <url>/thought/why%20this%20blog%20site-1551756187.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="为何建站"><a href="#为何建站" class="headerlink" title="为何建站"></a>为何建站</h3><p>因为本人是地理信息科学专业的大三学生（2019年），作为交叉学科，我们在本科阶段要学的主要分为计算机编程知识、测绘遥感方面的专业知识、<del>考研统考学科</del> 基础学科知识。</p><p>搭建这个网站现阶段主要是为了记录在学习的过程中的技术收获，养成知识的归纳的习惯，另外就是写一些时事的<del>看法</del> 吐槽。😂</p><p>而最主要的目的，就是能够通过本站展示自己，如果能以此能找到三俩好友，幸甚至哉。😀</p><h3 id="为何记录"><a href="#为何记录" class="headerlink" title="为何记录"></a>为何记录</h3><blockquote><p>人类区别于其他物种最重要的原因是，人类懂得记录，记录会推动人类反思，反思进而推动人类进步，而其他物种的生生不息大多只体现在繁衍上。</p></blockquote><p>带着自己的思考记录，在自己回首再读的时候，或许能够发现当时的思维的局限，能够明白自己是否在进步。过年期间没事时，又看了一遍黎明之前跟大秦帝国，觉得自己能够对人物之间的解读突然上了一个层次，而这是突然发现的，所以想通过平时记录一些时事，一做学习之余的消遣，二为以后反思提供资料。</p><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>简言之，<strong><a href="https://screw1024.github.io/">本站</a></strong>是一个记录技术和思考的原创个人博客。</p><p>现阶段主要是计算机方面的一些总结，可以获得成就奖嘛😜。以后打算走GIS开发路线，如果能够顺利，希望以后能够有机会写一些GIS方面的总结，因为本人能力有限，在学校阶段主要精力放在了计算机上了。</p><p>文章中如若发现错误或不当言论，还望您不吝赐教。</p><h3 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h3><p>在校生，刚把前端基础学的差不多（顺带说下，通过搭建本站终于懂了node的模块化的好处了）。目前正在学Python，想学习一下Django以及爬虫，这些都是以后web gis的技术要求。</p><blockquote><p>技术交流、开车交友请右转找微信小图标🙃</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 思考 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> thought </tag>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>我的爱好</title>
       <link href="/thought/about%20my%20hobby-1551756187.html"/>
       <url>/thought/about%20my%20hobby-1551756187.html</url>
@@ -152,6 +125,33 @@
             <tag> thought </tag>
             
             <tag> hobby </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>为何建站</title>
+      <link href="/thought/why%20this%20blog%20site-1551756187.html"/>
+      <url>/thought/why%20this%20blog%20site-1551756187.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="为何建站"><a href="#为何建站" class="headerlink" title="为何建站"></a>为何建站</h3><p>因为本人是地理信息科学专业的大三学生（2019年），作为交叉学科，我们在本科阶段要学的主要分为计算机编程知识、测绘遥感方面的专业知识、<del>考研统考学科</del> 基础学科知识。</p><p>搭建这个网站现阶段主要是为了记录在学习的过程中的技术收获，养成知识的归纳的习惯，另外就是写一些时事的<del>看法</del> 吐槽。😂</p><p>而最主要的目的，就是能够通过本站展示自己，如果能以此能找到三俩好友，幸甚至哉。😀</p><h3 id="为何记录"><a href="#为何记录" class="headerlink" title="为何记录"></a>为何记录</h3><blockquote><p>人类区别于其他物种最重要的原因是，人类懂得记录，记录会推动人类反思，反思进而推动人类进步，而其他物种的生生不息大多只体现在繁衍上。</p></blockquote><p>带着自己的思考记录，在自己回首再读的时候，或许能够发现当时的思维的局限，能够明白自己是否在进步。过年期间没事时，又看了一遍黎明之前跟大秦帝国，觉得自己能够对人物之间的解读突然上了一个层次，而这是突然发现的，所以想通过平时记录一些时事，一做学习之余的消遣，二为以后反思提供资料。</p><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>简言之，<strong><a href="https://screw1024.github.io/">本站</a></strong>是一个记录技术和思考的原创个人博客。</p><p>现阶段主要是计算机方面的一些总结，可以获得成就奖嘛😜。以后打算走GIS开发路线，如果能够顺利，希望以后能够有机会写一些GIS方面的总结，因为本人能力有限，在学校阶段主要精力放在了计算机上了。</p><p>文章中如若发现错误或不当言论，还望您不吝赐教。</p><h3 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h3><p>在校生，刚把前端基础学的差不多（顺带说下，通过搭建本站终于懂了node的模块化的好处了）。目前正在学Python，想学习一下Django以及爬虫，这些都是以后web gis的技术要求。</p><blockquote><p>技术交流、开车交友请右转找微信小图标🙃</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 思考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> thought </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -240,22 +240,22 @@
     
     
     <entry>
-      <title>为何建站 &amp;&amp; 为何写作</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>标签云</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<h4 id="为何建站"><a href="#为何建站" class="headerlink" title="为何建站"></a>为何建站</h4><p>因为本人是地理信息科学专业的大三学生（2019年），作为交叉学科，我们在本科阶段要学的主要分为计算机编程知识、测绘遥感方面的专业知识、<del>考研统考学科</del> 基础学科知识。</p><p>搭建这个网站现阶段主要是为了记录在学习的过程中的技术收获，养成知识的归纳的习惯，另外就是写一些时事的<del>看法</del> 吐槽。😂</p><p>而最主要的目的，就是能够通过本站展示自己，如果能以此能找到三俩好友，幸甚至哉。😀</p><h4 id="为何记录"><a href="#为何记录" class="headerlink" title="为何记录"></a>为何记录</h4><blockquote><p>人类区别于其他物种最重要的原因是，人类懂得记录，记录会推动人类反思，反思进而推动人类进步，而其他物种的生生不息大多只体现在繁衍上。</p></blockquote><p>带着自己的思考记录，在自己回首再读的时候，或许能够发现当时的思维的局限，能够明白自己是否在进步。过年期间没事时，又看了一遍黎明之前跟大秦帝国，觉得自己能够对人物之间的解读突然上了一个层次，而这是突然发现的，所以想通过平时记录一些时事，一做学习之余的消遣，二为以后反思提供资料。</p><h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>简言之，<strong><a href="https://screw1024.github.io/">本站</a></strong>是一个记录技术和思考的原创个人博客。</p><p>现阶段主要是计算机方面的一些总结，可以获得成就奖嘛😜。以后打算走GIS开发路线，如果能够顺利，希望以后能够有机会写一些GIS方面的总结，因为本人能力有限，在学校阶段主要精力放在了计算机上了。</p><p>文章中如若发现错误或不当言论，还望您不吝赐教。</p><h4 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h4><p>在校生，刚把前端基础学的差不多（顺带说下，通过搭建本站终于懂了node的模块化的好处了）。目前正在学Python，想学习一下Django以及爬虫，这些都是以后web gis的技术要求。</p><blockquote><p>技术交流、开车交友请右转找微信小图标🙃</p></blockquote>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>标签云</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>为何建站 &amp;&amp; 为何写作</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h4 id="为何建站"><a href="#为何建站" class="headerlink" title="为何建站"></a>为何建站</h4><p>因为本人是地理信息科学专业的大三学生（2019年），作为交叉学科，我们在本科阶段要学的主要分为计算机编程知识、测绘遥感方面的专业知识、<del>考研统考学科</del> 基础学科知识。</p><p>搭建这个网站现阶段主要是为了记录在学习的过程中的技术收获，养成知识的归纳的习惯，另外就是写一些时事的<del>看法</del> 吐槽。😂</p><p>而最主要的目的，就是能够通过本站展示自己，如果能以此能找到三俩好友，幸甚至哉。😀</p><h4 id="为何记录"><a href="#为何记录" class="headerlink" title="为何记录"></a>为何记录</h4><blockquote><p>人类区别于其他物种最重要的原因是，人类懂得记录，记录会推动人类反思，反思进而推动人类进步，而其他物种的生生不息大多只体现在繁衍上。</p></blockquote><p>带着自己的思考记录，在自己回首再读的时候，或许能够发现当时的思维的局限，能够明白自己是否在进步。过年期间没事时，又看了一遍黎明之前跟大秦帝国，觉得自己能够对人物之间的解读突然上了一个层次，而这是突然发现的，所以想通过平时记录一些时事，一做学习之余的消遣，二为以后反思提供资料。</p><h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>简言之，<strong><a href="https://screw1024.github.io/">本站</a></strong>是一个记录技术和思考的原创个人博客。</p><p>现阶段主要是计算机方面的一些总结，可以获得成就奖嘛😜。以后打算走GIS开发路线，如果能够顺利，希望以后能够有机会写一些GIS方面的总结，因为本人能力有限，在学校阶段主要精力放在了计算机上了。</p><p>文章中如若发现错误或不当言论，还望您不吝赐教。</p><h4 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h4><p>在校生，刚把前端基础学的差不多（顺带说下，通过搭建本站终于懂了node的模块化的好处了）。目前正在学Python，想学习一下Django以及爬虫，这些都是以后web gis的技术要求。</p><blockquote><p>技术交流、开车交友请右转找微信小图标🙃</p></blockquote>]]></content>
       
     </entry>
     
