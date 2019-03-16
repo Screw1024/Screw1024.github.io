@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://Screw1024.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://Screw1024.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://Screw1024.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="https://Screw1024.github.io">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://Screw1024.github.io">
+<meta name="author" content="陈永建">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+
+<title>如何理解python中的&#34;入口函数&#34; - Screw1204@blog</title>
+
+<meta name="keywords" content="Python，Screw1204，main">
+
+<meta name="description " content="理解python&#34;入口函数&#34;四个方面作用">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="陈">陈</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/about" title="关于">
+            <i class="fa fa-question-circle"></i>
+            <span>关于</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <img class="avatar" width="72" src="/images/avatar.jpg" alt="avatar">
+        
+        <h1 class="cover-siteName"></h1>
+        <h3 class="cover-siteTitle">永远的“白带”选手——陈永建</h3>
+        <p class="cover-siteDesc">念念不忘，必有回响！</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/Screw1024" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最近</a></li>
+        
+            
+                <li class>
+                    <a href="/categories/frontend" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/backend" data-name="后端">后端</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/GIS" data-name="GIS">GIS</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/thought" data-name="思考">思考</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/reading" data-name="读书">读书</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="搜索">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://github.com/Screw1024" target="_blank">
+                    <img width="48" src="/images/avatar.jpg" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href target="_blank">Screw1204</a>
+                    <span title="最后编辑于&nbsp;2019-03-13">2019-03-13</span>
+                </p>
+                <p>永远的“白带”选手</p>
+            </div>
+            <h2 class="post-title">如何理解Python中的"入口函数"</h2>
+            <div class="post-meta">
+                本文共计3601个字 |
+                您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h2><p>通俗的理解<code>__name__ == &#39;__main__&#39;</code>：假如你叫小明.py，在朋友眼中，你是小明<code>(__name__ == &#39;小明&#39;)</code>；在你自己眼中，你是你自己<code>(__name__ == &#39;__main__&#39;)</code>。</p>
+<p><code>if __name__ == &#39;__main__&#39;</code>的意思是：当.py文件被直接运行时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块将被运行；当.py文件以模块形式被导入时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块不被运行。</p>
+<h2 id="2-程序入口"><a href="#2-程序入口" class="headerlink" title="2. 程序入口"></a>2. 程序入口</h2><p>对于很多编程语言来说，程序都必须要有一个入口，比如C，C++，以及完全面向对象的编程语言Java，C#等。如果你接触过这些语言，对于程序入口这个概念应该很好理解，C，C++都需要有一个main函数作为程序的入口，也就是程序的运行会从main函数开始。同样，Java，C#必须要有一个包含Main方法的主类，作为程序入口。</p>
+<p>而Python则不同，它属于脚本语言，不像编译型语言那样先将程序编译成二进制再运行，而是动态的逐行解释运行。也就是从脚本第一行开始运行，没有统一的入口。</p>
+<p>一个Python源码文件（.py）除了可以被直接运行外，还可以作为模块（也就是库），被其他.py文件导入。不管是直接运行还是被导入，.py文件的最顶层代码都会被运行（Python用缩进来区分代码层次），而当一个.py文件作为模块被导入时，我们可能不希望一部分代码被运行。</p>
+<h3 id="2-1-一个-py文件被其他-py文件引用"><a href="#2-1-一个-py文件被其他-py文件引用" class="headerlink" title="2.1 一个.py文件被其他.py文件引用"></a>2.1 一个.py文件被其他.py文件引用</h3><p>假设我们有一个const.py文件，内容如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PI = <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print(<span class="string">"PI:"</span>, PI)</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br><span class="line"># 运行结果：PI: 3.1412345678</span><br></pre></td></tr></table></figure>
+<p>现在，我们写一个用于计算圆面积的area.py文件，area.py文件需要用到const.py文件中的PI变量。从const.py中，我们把PI变量导入area.py：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="keyword">const</span> <span class="keyword">import</span> PI</span><br><span class="line"></span><br><span class="line">def calc_round_area(radius):</span><br><span class="line">    <span class="keyword">return</span> PI * (radius ** <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print(<span class="string">"round area: "</span>, calc_round_area(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br><span class="line"><span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">运行结果：</span></span><br><span class="line"><span class="string">PI: 3.14</span></span><br><span class="line"><span class="string">round area:  12.56</span></span><br><span class="line"><span class="string">'</span><span class="string">''</span><span class="number">123456789101112131415</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-修改const-py，添加if-name-quot-main-quot"><a href="#2-2-修改const-py，添加if-name-quot-main-quot" class="headerlink" title="2.2 修改const.py，添加if __name__ == &quot;__main__&quot;"></a>2.2 修改const.py，添加<code>if __name__ == &quot;__main__&quot;</code></h3><p>我们看到const.py中的main函数也被运行了，实际上我们不希望它被运行，因为const.py提供的main函数只是为了测试常量定义。这时<code>if __name__ == &#39;__main__&#39;</code>派上了用场，我们把const.py改一下，添加<code>if __name__ == &quot;__main__&quot;</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PI = <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print(<span class="string">"PI:"</span>, PI)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()<span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+<p>运行const.py，输出如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PI: <span class="number">3.141</span></span><br></pre></td></tr></table></figure>
+<p>运行area.py，输出如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">round area:  <span class="number">12.561</span></span><br></pre></td></tr></table></figure>
+<p>如上，我们可以看到<code>if __name__ == &#39;__main__&#39;</code>相当于Python<a href="https://www.baidu.com/s?wd=%E6%A8%A1%E6%8B%9F&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">模拟</a>的程序入口，Python本身并没有这么规定，这只是一种编码习惯。由于模块之间相互引用，不同模块可能有这样的定义，而程序入口只有一个。到底哪个程序入口被选中，这取决于<code>__name__</code>的值。 </p>
+<h2 id="3-name"><a href="#3-name" class="headerlink" title="3. __name__"></a>3. <code>__name__</code></h2><h3 id="3-1-name-反映一个包的结构"><a href="#3-1-name-反映一个包的结构" class="headerlink" title="3.1 __name__反映一个包的结构"></a>3.1 <code>__name__</code>反映一个包的结构</h3><p><code>__name__</code>是内置变量，可用于反映一个包的结构。假设我们有一个包a，包的结构如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">├── b</span><br><span class="line">│   ├── c.py</span><br><span class="line">│   └── __init__.py</span><br><span class="line">└── __init__.py12345</span><br></pre></td></tr></table></figure>
+<p>在包a中，文件<code>c.py，__init__.py，__init__.py</code>的内容都为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(__name__)<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>当一个.py文件（模块）被其他.py文件（模块）导入时，我们在命令行执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">"import a.b.c"</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">a.b</span><br><span class="line">a.b.c123</span><br></pre></td></tr></table></figure>
+<p>由此可见，<code>__name__</code>可以清晰地反映一个模块在包中的层次。</p>
+<h3 id="3-2-name-表示当前模块的名字"><a href="#3-2-name-表示当前模块的名字" class="headerlink" title="3.2 __name__表示当前模块的名字"></a>3.2 <code>__name__</code>表示当前模块的名字</h3><p><code>__name__</code>是内置变量，可用于表示当前模块的名字。我们直接运行一个.py文件（模块）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python a/b/c.py1</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__main__1</span><br></pre></td></tr></table></figure>
+<p>由此我们可知：如果一个.py文件（模块）被直接运行时，则其没有包结构，其<code>__name__</code>值为<code>__main__</code>，即模块名为<code>__main__</code>。</p>
+<p>所以，<code>if __name__ == &#39;__main__&#39;</code>的意思是：当.py文件被直接运行时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块将被运行；当.py文件以模块形式被导入时，<code>if __name__ == &#39;__main__&#39;</code>之下的代码块不被运行。</p>
+<h2 id="4-main-py文件与python-m"><a href="#4-main-py文件与python-m" class="headerlink" title="4. __main__.py文件与python -m"></a>4. <code>__main__.py</code>文件与<code>python -m</code></h2><p>Python的-m参数用于将一个模块或者包作为一个脚本运行，而<code>__main__.py</code>文件相当于是一个包的“入口程序“。</p>
+<h3 id="4-1-运行Python程序的两种方式"><a href="#4-1-运行Python程序的两种方式" class="headerlink" title="4.1 运行Python程序的两种方式"></a>4.1 运行Python程序的两种方式</h3><ul>
+<li><code>python xxx.py</code>，直接运行xxx.py文件</li>
+<li><code>python -m xxx.py</code>，把xxx.py当做模块运行</li>
+</ul>
+<p>假设我们有一个文件run.py，内容如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">print(sys.path)<span class="number">123</span></span><br></pre></td></tr></table></figure>
+<p>我们用直接运行的方式启动</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python run.py1</span><br></pre></td></tr></table></figure>
+<p>输出结果(为了说明问题，输出结果只截取了重要部分，下同)：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'/home/huoty/aboutme/pythonstudy/main'</span>, ...]<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>然后以模块的方式运行:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m run.py1</span><br></pre></td></tr></table></figure>
+<p>输出内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">''</span>, ...]</span><br><span class="line">/usr/bin/python: No <span class="built_in">module</span> named run.py12</span><br></pre></td></tr></table></figure>
+<p>由于输出结果只列出了关键的部分，应该很容易看出他们之间的差异：</p>
+<ul>
+<li>直接运行方式是把run.py文件所在的目录放到了sys.path属性中</li>
+<li>以模块方式运行是把你输入命令的目录（也就是当前工作路径），放到了 sys.path 属性中。</li>
+</ul>
+<p>以模块方式运行还有一个不同的地方：多出了一行<code>No module named run.py</code>的错误。实际上以模块方式运行时，Python先对run.py执行一遍 import，所以<code>print(sys.path)</code>被成功执行，然后Python才尝试运行run.py模块，但是在path变量中并没有run.py这个模块，所以报错。正确的运行方式，应该是<code>python -m run</code>。</p>
+<h3 id="4-2-main-py的作用"><a href="#4-2-main-py的作用" class="headerlink" title="4.2 __main__.py的作用"></a>4.2 <code>__main__.py</code>的作用</h3><p>仍然先看例子，假设我们有如下一个包package：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">package</span><br><span class="line">├── __init__.py</span><br><span class="line">└── __main__.py123</span><br></pre></td></tr></table></figure>
+<p>其中，文件<code>__init__.py</code>的内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">print(<span class="string">"__init__"</span>)</span><br><span class="line">print(sys.path)<span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>其中，文件<code>__main__.py</code>的内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">print(<span class="string">"__main__"</span>)</span><br><span class="line">print(sys.path)<span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>接下来，我们运行这个package，使用<code>python -m package</code>运行，输出结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__init__</span><br><span class="line">[<span class="string">''</span>, ...]</span><br><span class="line"></span><br><span class="line">__main__</span><br><span class="line">[<span class="string">''</span>, ...]<span class="number">12345</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>python package</code>运行，输出结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__main__</span><br><span class="line">[<span class="string">'package'</span>, ...]<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p>总结一下</p>
+<ul>
+<li><p>当加上-m参数时，Python会把当前工作目录添加到sys.path中；而不加-m时，Python则会把脚本所在目录添加到sys.path中。</p>
+</li>
+<li><p>当加上-m参数时，Python会先将模块或者包导入，然后再执行。</p>
+</li>
+<li><p><code>__main__.py</code>文件是一个包或者目录的入口程序。不管是用<code>python package</code>还是用<code>python -m package</code>运行，<code>__main__.py</code>文件总是被执行。 </p>
+</li>
+</ul>
+<h2 id="5-原文链接"><a href="#5-原文链接" class="headerlink" title="5. 原文链接"></a>5. 原文链接</h2><p><a href="https://blog.csdn.net/yjk13703623757/article/details/77918633" target="_blank" rel="noopener">如何简单地理解Python中的if <strong>name</strong> == ‘<strong>main</strong>‘</a></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/Python/">-Python</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">    
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<span id="siteBuildingTime"></span>天<br>
+            ©2019 <i class="fa fa-heart-o"></i> Screw1024
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="请输入查询关键词">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '03/4/2019',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+            jsi_config.localSearch = {
+                dbPath: '/search.xml',
+                trigger: 'auto',
+                topN: '1',
+                unescape: 'false'
+            }
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":10,"vOffset":-140},"mobile":{"show":false}});</script></body>
+</html>
