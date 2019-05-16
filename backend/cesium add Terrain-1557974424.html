@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://Screw1024.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://Screw1024.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://Screw1024.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="https://Screw1024.github.io">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://Screw1024.github.io">
+<meta name="author" content="陈永建">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.ico">
+
+
+<title>cesium加载地形 - blog</title>
+
+<meta name="keywords" content="cesium，Screw1204">
+
+<meta name="description " content="在Cesium中，地球影像数据跟地形数据是分开的，为了加载更快，Cesium默认加载的地形数据是非常模糊的，需要修改">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="陈">陈</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/about" title="关于">
+            <i class="fa fa-question-circle"></i>
+            <span>关于</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <img class="avatar" width="72" src="/images/avatar.jpg" alt="avatar">
+        
+        <h1 class="cover-siteName"></h1>
+        <h3 class="cover-siteTitle">永远的“白带”选手——陈永建</h3>
+        <p class="cover-siteDesc">念念不忘，必有回响！</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/Screw1024" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最近</a></li>
+        
+            
+                <li class>
+                    <a href="/categories/frontend" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/backend" data-name="后端">后端</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/GIS" data-name="GIS">GIS</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/thought" data-name="思考">思考</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/reading" data-name="读书">读书</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="搜索">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://github.com/Screw1024" target="_blank">
+                    <img width="48" src="/images/avatar.jpg" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href target="_blank">Screw1204</a>
+                    <span title="最后编辑于&nbsp;2019-05-16">2019-05-16</span>
+                </p>
+                <p>永远的“白带”选手</p>
+            </div>
+            <h2 class="post-title">cesium加载地形</h2>
+            <div class="post-meta">
+                本文共计2488个字 |
+                您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>一、创建服务器（看第一篇笔记）</p>
+<p>二、加载地形图数据</p>
+<p>在Cesium中，地球影像数据跟地形数据是分开的，为了加载更快，Cesium默认加载的地形数据是非常模糊的，需要修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加载在线地形图数据</span></span><br><span class="line"><span class="keyword">var</span> worldTerrain = Cesium.createWorldTerrain(&#123;</span><br><span class="line"><span class="comment">// required for water effects</span></span><br><span class="line">requestWaterMask : <span class="literal">true</span>, </span><br><span class="line"><span class="comment">// required for terrain lighting</span></span><br><span class="line">requestVertexNormals : <span class="literal">true</span> </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这里有个坑是，版本的问题可能会导致createWorldTerrain()所封装的网址不一致，导致前面版本无法正常访问，我就是先用1.51版本写的代码，怎么都不报错，且不加载数据，更改1.57后正常</p>
+<p>同时，如果地形数据无法正确访问，影像数据也加载不出来</p>
+<p>三、挂载图层到div上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Viewer第一个参数容器就是需要上面的div容器承载</span></span><br><span class="line"><span class="keyword">var</span> viewer = <span class="keyword">new</span> Cesium.Viewer(<span class="string">'cesiumContainer'</span>,&#123;</span><br><span class="line"><span class="comment">// 将图层选择的控件关掉，才能添加其他影像数据</span></span><br><span class="line">baselLayerPicker:<span class="literal">false</span>,</span><br><span class="line">imageryProvider:Google,</span><br><span class="line">terrainProvider: worldTerrain</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="/img/cesium/terrain.png" alt></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">        &lt;script src=<span class="string">"Build/Cesium/Cesium.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">        &lt;link href=<span class="string">"Build/Cesium/Widgets/widgets.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            body&#123;</span><br><span class="line">                border: <span class="number">0</span>px;</span><br><span class="line">                margin: <span class="number">0</span>px;        </span><br><span class="line">            &#125;</span><br><span class="line">            #cesiumContainer &#123;</span><br><span class="line">                width: <span class="number">100</span>%;</span><br><span class="line">                height: <span class="number">100</span>%;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div id=<span class="string">"cesiumContainer"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            <span class="comment">//加载谷歌中国卫星影像，谷歌地球商业版，需要翻墙，报跨域资源请求错误</span></span><br><span class="line">            <span class="keyword">var</span> url = <span class="string">"http://mt1.google.cn/vt/lyrs=s&amp;hl=zh-CN&amp;x=&#123;x&#125;&amp;y=&#123;y&#125;&amp;z=&#123;z&#125;&amp;s=Gali"</span>; </span><br><span class="line">            <span class="keyword">var</span> Google = <span class="keyword">new</span> Cesium.UrlTemplateImageryProvider(&#123;<span class="attr">url</span>:url&#125;)</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//Viewer第一个参数容器就是需要上面的div容器承载</span></span><br><span class="line">            <span class="keyword">var</span> viewer = <span class="keyword">new</span> Cesium.Viewer(<span class="string">'cesiumContainer'</span>,&#123;</span><br><span class="line">              <span class="comment">// 将图层选择的控件关掉，才能添加其他影像数据</span></span><br><span class="line">              baselLayerPicker:<span class="literal">false</span>,</span><br><span class="line">              imageryProvider:Google</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            viewer.camera.setView(&#123;</span><br><span class="line">              <span class="comment">// Cesium的坐标是以地心为原点，一向指向南美洲，一向指向亚洲，一向指向北极州</span></span><br><span class="line">              <span class="comment">// fromDegrees()方法，将经纬度和高程转换为世界坐标</span></span><br><span class="line">              destination:Cesium.Cartesian3.fromDegrees(<span class="number">117.48</span>,<span class="number">30.67</span>,<span class="number">15000.0</span>),</span><br><span class="line">              orientation:&#123;</span><br><span class="line">                <span class="comment">// 指向</span></span><br><span class="line">                heading:Cesium.Math.toRadians(<span class="number">90</span>,<span class="number">0</span>),</span><br><span class="line">                <span class="comment">// 视角</span></span><br><span class="line">                pitch:Cesium.Math.toRadians(<span class="number">-90</span>),</span><br><span class="line">                roll:<span class="number">0.0</span></span><br><span class="line">              &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// 同理，想要标记某个位置和角度，下次直接进入，可以在选好的角度上按F12进入开发者工具</span></span><br><span class="line">            <span class="comment">// 输入viewer.camera.heading  viewer.camera.pitch  viewer.camera.position回车可以得到信息</span></span><br><span class="line">        &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/cesium/">cesium</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">    
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<span id="siteBuildingTime"></span>天<br>
+            ©2019 <i class="fa fa-heart-o"></i> Screw1024
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="请输入查询关键词">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '03/4/2019',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+            jsi_config.localSearch = {
+                dbPath: '/search.xml',
+                trigger: 'auto',
+                topN: '1',
+                unescape: 'false'
+            }
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":130,"height":300,"hOffset":10,"vOffset":-140},"mobile":{"show":false}});</script></body>
+</html>
